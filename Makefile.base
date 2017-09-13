@@ -1,0 +1,22 @@
+IncludeDir=/home/tmark/Code/linux_code_package/tlpi-dist/lib
+LinkDir=/home/tmark/Code/linux_code_package/tlpi-dist/lib/
+ObjectFile=$(LinkDir)error_functions.o $(LinkDir)get_num.o
+
+$(GEN_EXE):$(GEN_EXE).o $(ObjectFile)
+	gcc -o $(GEN_EXE) $(GEN_EXE).o $(ObjectFile)
+
+$(GEN_EXE).o:$(GEN_EXE).c
+	gcc -c -o $(GEN_EXE).o -I $(IncludeDir) $(GEN_EXE).c
+
+
+
+.PHONY:clean no_target
+no_target:
+	@echo no target, use GEN_EXE=target to set the target
+
+clean:
+	-rm *.o
+
+
+
+
