@@ -1,2 +1,2 @@
 # LinuxProgram
-学习linux系统编程相关代码
+linux/unix系统编程手册相关课后练习代码
